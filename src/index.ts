@@ -13,10 +13,10 @@
 
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
-		return new Response(JSON.stringify({key: "Hello world"}), {
+		return new Response(JSON.stringify({ key: 'Hello world' }), {
 			headers: {
-				"content-type": "application/json; charset=UTF-8",
+				'content-type': 'application/json; charset=UTF-8'
 			}
 		});
-	},
+	}
 } satisfies ExportedHandler<Env>;
