@@ -28,8 +28,9 @@ npx wrangler whoami
 
 - GET `/api/v1/todos` 列表
 - POST `/api/v1/todos` 新增
-- PUT `/api/v1/todos/:todo` 更新
-- DELETE `/api/v1/todos/:todo` 删除
+- GET `/api/v1/todos/:id` 查看
+- PUT `/api/v1/todos/:id` 更新
+- DELETE `/api/v1/todos/:id` 删除
 
 官方文档：https://developers.cloudflare.com/workers/#more-resources
 

@@ -45,6 +45,27 @@ todo.post("/", zValidator("json", Todo.pick({ name: true, })), async (c) => {
 	});
 });
 
+// find todo
+todo.get("/:id", async (c) => {
+	const id = parseInt(c.req.param('id'));
+
+	const todo = await todoService.find(c.env.DB, { id: id });
+
+	if (todo === undefined) {
+		return c.json({ success: false, message: 'Todo not found' }, 404);
+	}
+
+	return c.json({
+		success: true,
+		message: 'Todo fetched successfully',
+		data: {
+			id: todo?.id,
+			title: todo?.name,
+			completed: new Boolean(todo?.completed),
+		},
+	});
+});
+
 // update todo
 todo.put("/:id", zValidator("json", Todo.pick({ name: true, completed: true, })), async (c) => {
 	const id = parseInt(c.req.param('id'));
