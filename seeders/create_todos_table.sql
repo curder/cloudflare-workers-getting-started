@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS "todos" (
   "name" VARCHAR(255) NOT NULL,
   "completed" BOOLEAN DEFAULT FALSE,
   "created_at" datetime NOT NULL DEFAULT current_timestamp,
-  "cpdated_at" datetime NOT NULL DEFAULT current_timestamp
+  "updated_at" datetime NOT NULL DEFAULT current_timestamp
 );
 
 CREATE TRIGGER tg_todos_updated_at

@@ -71,7 +71,7 @@ todo.put("/:id", zValidator("json", Todo.pick({ name: true, completed: true, }))
 	const id = parseInt(c.req.param('id'));
 	const data = c.req.valid("json");
 
-	const todo = await todoService.update(c.env.DB, { Id: id }, data);
+	const todo = await todoService.update(c.env.DB, { id: id }, data);
 
 	if (todo === undefined) {
 		return c.json({ success: false, message: 'Todo not found' }, 404);
