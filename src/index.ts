@@ -1,6 +1,3 @@
-import { Hono } from 'hono';
+import api from './api';
 
-const app = new Hono();
-app.get('/', c => c.json({ key: 'Hello world!' }));
-
-export default app;
+export default api;
